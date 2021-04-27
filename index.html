@@ -1,23 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>zxr</title>
     <style>
-        body
-        {
+        body {
             background-color: cornsilk;
         }
-        #cid1
-        {
+
+        #cid1 {
             color: darkseagreen;
             text-align: center;
         }
     </style>
+    <link rel="stylesheet" href="./lib/gitalk.min.css">
 </head>
+
 <body>
     <h1 id="cid1">欢迎来到zxr的网站</h1>
+    <hr />
+    <div id="newc">
+        <h2 style="color: darkseagreen;text-align: center;">have some news</h2>
+        <div id="news-text" style="color: darkseagreen;text-align: left;">
+            <h3>no something</h3>
+
+        </div>
+        <div id="gitalk-container">
+            <script>
+                var gitalk = new Gitalk({
+                    clientID: 'a65a42c0e4e58b493b57', // GitHub Application Client ID
+                    clientSecret: '29a34cb7310876110a5391c4c5c92dab74e06ec8', // GitHub Application Client Secret
+                    repo: 'zxr',  // 存放评论的仓库
+                    owner: 'phpages',         
+                    admin: ['wmz1024'],        // 如果仓库有多个人可以操作，那么在这里以数组形式写出
+                    id: location.pathname,      // 用于标记评论是哪个页面的，确保唯一，并且长度小于50
+                })
+
+                gitalk.render('gitalk-container');    // 渲染Gitalk评论组件
+            </script>
+        </div>
+    </div>
+    <script src="./lib/gitalk.min.js"></script>
 </body>
+
 </html>
